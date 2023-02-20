@@ -17,8 +17,8 @@ def test_get_delayed_response(browser, delay_time):
     main_page = MainPage(browser, BASE_URL)
     main_page.open()
     main_page.click_get_delayed_response()
-    response_code = main_page.response_code_number()
     time.sleep(abs(int(delay_time)))
+    response_code = main_page.response_code_number()
     response_output = main_page.response_output_json()
 
     assert response_code == api_response.status_code
